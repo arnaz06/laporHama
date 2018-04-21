@@ -3,6 +3,7 @@ const path = require('path')
 const url = require('url')
 const shell = require('electron').shell
 const ipc = require('electron').ipcMain
+require('dotenv').config()
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
@@ -20,9 +21,11 @@ function createWindow() {
     protocol: 'file:',
     slashes: true
   }))
-
+  console.log(process.env.NODE_ENV);
   // Open the DevTools.
-  win.webContents.openDevTools()
+  if(process.env.NODE_ENV == 'development'){
+    win.webContents.openDevTools()
+  }
 
   // Emitted when the window is closed.
   win.on('closed', () => {
