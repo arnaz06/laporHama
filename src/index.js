@@ -10,10 +10,7 @@ const ghissues     = require('ghissues')
     , authOptions = { user: process.env.USER, token: process.env.USER_TOKEN }
 
 
-
-
 const laporHamaBtn = document.getElementById('laporHamaBtn')
-
 
 
 const getUser = () => {
@@ -27,8 +24,6 @@ const getUser = () => {
   ghissues.create(authOptions, user, repo, data, function (err, issue) {
     // data for new issue
     if(err){
-      console.log(user);
-      console.log(repo);
       console.log(err);
     }else{
       console.log(issue)
@@ -36,13 +31,7 @@ const getUser = () => {
   })
 
 }
-
-
-
 getUser()
-// postIssues()
-
-
 
 laporHamaBtn.addEventListener('click', function() {
   const modalPath = path.join('file://', __dirname, 'lapor.html')

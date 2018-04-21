@@ -2,9 +2,7 @@
 Open Source Project
 
 ### Prerequisites
-- NodeJS : minimal v.8.x LTS | we recomended to install by [nvm](https://github.com/creationix/nvm) ways
 - npm : minimal v. 3.1
-- electron JS : v. 1.8.4
 
 
 ### How to install
