@@ -17,4 +17,4 @@ Open Source Project
 6. install dependencies ```$ npm install```
 
 ### Run project
-```$ npm run dev```
+```$ npm start```
