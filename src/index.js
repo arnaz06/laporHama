@@ -13,32 +13,33 @@ const ghissues     = require('ghissues')
 
 
 const laporHamaBtn = document.getElementById('laporHamaBtn')
-const user= process.env.USER
-const repo=process.env.REPO
 
 
-const getUser = (user) => {
+
+const getUser = () => {
+  const user= process.env.USERNAME
+  const repo=process.env.REPO
   var data = {
     title : 'test issues',
     body  : 'Pretty **slick** `markdown`',
     labels: ['bugs']
 }
-ghissues.create(authOptions, user, repo, data, function (err, issue) {
-  // data for new issue
-  if(err){
-    console.log(err);
-  }else{
-
-    console.log(issue)
-
-  }
-})
+  ghissues.create(authOptions, user, repo, data, function (err, issue) {
+    // data for new issue
+    if(err){
+      console.log(user);
+      console.log(repo);
+      console.log(err);
+    }else{
+      console.log(issue)
+    }
+  })
 
 }
 
 
 
-getUser('arnaz06')
+getUser()
 // postIssues()
 
 
