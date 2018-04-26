@@ -4,6 +4,9 @@ const url = require('url')
 const shell = require('electron').shell
 const ipc = require('electron').ipcMain
 require('dotenv').config()
+const ghissues     = require('ghissues')
+    , authOptions = { user: process.env.USERNAME, token: process.env.USER_TOKEN }
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
@@ -76,4 +79,18 @@ app.on('activate', () => {
   if (win === null) {
     createWindow()
   }
+})
+ipc.on('send-bug', function(event, payload) {
+  console.log(payload);
+  var data = {
+    title: payload.title,
+    body: payload.body
+  }
+  ghissues.create(authOptions, process.env.USERNAME, process.env.REPO, data, function(err, issue) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(issue)
+    }
+  })
 })
