@@ -1,57 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Lapor Hama</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="../assets/images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/css/util.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/main.css">
-<!--===============================================================================================-->
-</head>
-<body>
+<html lang="id">
 
-		<div class="container-login100">
-				<form class="login100-form validate-form">
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Masukan judul ">
-						<input class="input100" id="title" type="text" name="Title">
-						<span class="focus-input100" data-placeholder="Title"></span>
-					</div>
-					<div class="wrap-input100 validate-input m-b-50" data-validate="Masukan keluh kesahmu">
-						<input class="input100" id="body" type="textarea" name="data">
-						<span class="focus-input100" data-placeholder="Lapor Hama"></span>
-					</div>
-					<div class="container-login100-form-btn">
-						<button id="submitBtn" class="login100-form-btn">
-							Lapor
-						</button>
-					</div>
-					<div class="container-login100-form-btn">
-						<button id="backBtn" class="login100-form-btn">
-							Back
-						</button>
-					</div>
-				</form>
-		</div>
-  <script src="lapor.js"></script>
+<head>
+  <title>TeaLinuxOS | LaporHama</title>
+
+  <link href="../assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../assets/css/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../assets/css/style-horizontal.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../assets/css/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../assets/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../assets/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+</head>
+
+
+<body class="cyan">
+  <div id="login-page" class="row">
+    <div class="col s12 z-depth-4 card-panel">
+      <form class="">
+        <div class="row">
+          <div class="input-field col s12 center">
+            <h4>Nemu
+              <g style="color:red;">Bug</g> Gan!</h4>
+            <p class="center">silahkan laporkan bug anda</p>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <input id="title" type="text" name="title" class="success">
+            <label for="title" class="center-align teal-text">Judul</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <textarea id="body" type="text" name="body" style="border: none"></textarea>
+            <label for="body" class="teal-text">Diskripsi</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <input id="image" type="file" name="image">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <button type="submit" class="btn waves-effect waves-light col s12 teal">Kirim</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script type="text/javascript" src="../assets/js/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="../assets/js/materialize.js"></script>
+  <script type="text/javascript" src="../assets/js/prism.js"></script>
+  <script type="text/javascript" src="../assets/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <script type="text/javascript" src="../assets/js/plugins.js"></script>
 
 </body>
+
 </html>

@@ -14,8 +14,9 @@ let win
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 800,
-    height: 600
+    width: 600,
+    height: 500,
+    resizable: false
   })
 
   // and load the index.html of the app.
@@ -28,6 +29,8 @@ function createWindow() {
   // Open the DevTools.
   if(process.env.NODE_ENV == 'development'){
     win.webContents.openDevTools()
+  }else{
+    win.webContents.on("devtools-opened", () => { win.webContents.closeDevTools(); });
   }
 
   // Emitted when the window is closed.
@@ -37,26 +40,26 @@ function createWindow() {
     // when you should delete the corresponding element.
     win = null
   })
-  const menu = Menu.buildFromTemplate([{
-    label: 'Menu',
-    submenu: [{
-        label: 'Adjust Notification Value'
-      },
-      {
-        label: 'CoinMarketCap',
-        click() {
-          shell.openExternal('http://github.com')
-        }
-      },
-      {
-        label: 'Exit',
-        click() {
-          app.quit()
-        }
-      },
-    ]
-  }])
-  Menu.setApplicationMenu(menu)
+  // const menu = Menu.buildFromTemplate([{
+    // label: 'Menu',
+    // submenu: [{
+    //     label: 'Adjust Notification Value'
+    //   },
+    //   {
+    //     label: 'CoinMarketCap',
+    //     click() {
+    //       shell.openExternal('http://github.com')
+    //     }
+    //   },
+    //   {
+    //     label: 'Exit',
+    //     click() {
+    //       app.quit()
+    //     }
+    //   },
+    // ]
+  // }])
+  Menu.setApplicationMenu(null)
 }
 
 // This method will be called when Electron has finished

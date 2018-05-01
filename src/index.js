@@ -8,10 +8,11 @@ const console = new nodeConsole.Console(process.stdout, process.stderr);
 require('dotenv').config()
 const ghissues     = require('ghissues')
     , authOptions = { user: process.env.USER, token: process.env.USER_TOKEN }
+
+
 const ipc = electron.ipcRenderer
 
 const laporHamaBtn = document.getElementById('laporHamaBtn')
-
 
 
 
