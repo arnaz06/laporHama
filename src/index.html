@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <title>TeaLinuxOS | LaporHama</title>
 
@@ -14,7 +15,18 @@
 </head>
 
 <!-- <body class="cyan"> -->
+
 <body class="teal">
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+  <script>
+    setInterval(function(){
+      document.getElementById("loader-wrapper").style.display = "none";
+    }, 3000);
+  </script>
   <div id="login-page" class="row white">
     <div style="height: 320px;" class="col s12 z-depth-4 card-panel teal white-text">
       <div class="">
@@ -25,14 +37,14 @@
           </div>
         </div>
         <div class="row margin">
-          <p style="">
+          <p>
             Satu laporan anda membuat
             <b>TeaLinuxOS</b> menjadi lebih baik :)
           </p>
         </div>
         <div class="row">
           <div class="input-field col s4 text-center offset-s4">
-            <a href="#" class="btn waves-effect waves-light white col s12 teal-text">lapor</a>
+            <a href="todo.html" class="btn waves-effect waves-light white col s12 teal-text">lapor</a>
           </div>
         </div>
       </div>
@@ -46,4 +58,5 @@
   <script type="text/javascript" src="../assets/js/plugins.js"></script>
 
 </body>
+
 </html>
