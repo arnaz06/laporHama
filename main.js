@@ -3,6 +3,7 @@ const path = require('path')
 const url = require('url')
 const shell = require('electron').shell
 const ipc = require('electron').ipcMain
+const axios = require('axios');
 require('dotenv').config()
 const ghissues     = require('ghissues')
     , authOptions = { user: process.env.USERNAME, token: process.env.USER_TOKEN }
@@ -41,23 +42,23 @@ function createWindow() {
     win = null
   })
   // const menu = Menu.buildFromTemplate([{
-    // label: 'Menu',
-    // submenu: [{
-    //     label: 'Adjust Notification Value'
-    //   },
-    //   {
-    //     label: 'CoinMarketCap',
-    //     click() {
-    //       shell.openExternal('http://github.com')
-    //     }
-    //   },
-    //   {
-    //     label: 'Exit',
-    //     click() {
-    //       app.quit()
-    //     }
-    //   },
-    // ]
+  //   label: 'Menu',
+  //   submenu: [{
+  //       label: 'Adjust Notification Value'
+  //     },
+  //     {
+  //       label: 'CoinMarketCap',
+  //       click() {
+  //         shell.openExternal('http://github.com')
+  //       }
+  //     },
+  //     {
+  //       label: 'Exit',
+  //       click() {
+  //         app.quit()
+  //       }
+  //     },
+  //   ]
   // }])
   Menu.setApplicationMenu(null)
 }
