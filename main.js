@@ -2,8 +2,9 @@ const {app,BrowserWindow,Menu} = require('electron')
 const path = require('path')
 const url = require('url')
 const shell = require('electron').shell
-const ipc = require('electron').ipcMain
+const FormData = require('FormData');
 const axios = require('axios');
+const ipc = require('electron').ipcMain
 require('dotenv').config()
 const ghissues     = require('ghissues')
     , authOptions = { user: process.env.USERNAME, token: process.env.USER_TOKEN }
@@ -26,8 +27,7 @@ function createWindow() {
     protocol: 'file:',
     slashes: true
   }))
-  console.log(process.env.NODE_ENV);
-  // Open the DevTools.
+   // Open the DevTools.
   if(process.env.NODE_ENV == 'development'){
     win.webContents.openDevTools()
   }else{
@@ -85,16 +85,16 @@ app.on('activate', () => {
   }
 })
 ipc.on('send-bug', function(event, payload) {
-  console.log(payload);
-  var data = {
+  let data={
     title: payload.title,
-    body: payload.body
+    body: payload.body+'![laporHama'+payload.image+']('+payload.image+')'
   }
-  ghissues.create(authOptions, process.env.USERNAME, process.env.REPO, data, function(err, issue) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(issue)
-    }
-  })
+    ghissues.create(authOptions, process.env.USERNAME, process.env.REPO, data, function(err, issue) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(issue)
+      }
+    })
+
 })

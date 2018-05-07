@@ -11,7 +11,17 @@
   <link href="../assets/css/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="../assets/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="../assets/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <script>
+  require('dotenv').config()
+    UPLOADCARE_PUBLIC_KEY = process.env.PUBLIC_KEY_UPLOADCARE;
+    UPLOADCARE_LOCALE = 'en';
+    UPLOADCARE_TABS = 'file';
+    UPLOADCARE_IMAGES_ONLY = true;
+    UPLOADCARE_PREVIEW_STEP = true;
 
+  </script>
+
+  <script charset="utf-8" src="https://ucarecdn.com/libs/widget/3.3.0/uploadcare.full.min.js"></script>
 
 </head>
 
@@ -42,7 +52,7 @@
         </div>
         <div class="row margin">
           <div class="input-field col s12">
-            <input id="image" type="file"  />
+            <input id="image" type="hidden" role="uploadcare-uploader" name="image" />
           </div>
         </div>
         <div class="row">
@@ -53,12 +63,13 @@
       </form>
     </div>
   </div>
-  <script type="text/javascript" src="lapor.js"></script>
-  <script type="text/javascript" src="../assets/js/jquery-1.11.2.min.js"></script>
-  <script type="text/javascript" src="../assets/js/materialize.js"></script>
+  <!-- <script type="text/javascript" src="../assets/js/jquery-1.11.2.min.js"></script> -->
+  <!-- <script type="text/javascript" src="../assets/js/materialize.js"></script>
   <script type="text/javascript" src="../assets/js/prism.js"></script>
   <script type="text/javascript" src="../assets/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-  <script type="text/javascript" src="../assets/js/plugins.js"></script>
+  <script type="text/javascript" src="../assets/js/plugins.js"></script> -->
+  <script type="text/javascript" src="lapor.js"></script>
+
 
 </body>
 
