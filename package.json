@@ -1,14 +1,17 @@
 {
-  "name": "latihanElectron",
+  "name": "LaporHama",
   "version": "1.0.0",
-  "description": "",
+  "description": "An awesome app!",
+  "version": "0.0.1",
+  "license": "MIT",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build-linux": "electron-packager . --version 1.8.6 --platform linux --icon ./assets/icon.png --out ./dist --overwrite"
+    "build-linux": "electron-packager . --version 1.8.6 --platform linux --icon ./assets/icon.png --out ./dist --overwrite",
+    "deb64": "electron-installer-debian --src dist/latihanElectron-linux-x64/ --dest dist/installers/ --arch amd64"
   },
   "keywords": [],
-  "author": "",
+  "author": "arnaz06",
   "license": "ISC",
   "dependencies": {
     "FormData": "^0.10.1",
@@ -22,6 +25,8 @@
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
-    "electron-packager": "^12.0.1"
+    "electron-installer-debian": "^0.8.1",
+    "electron-packager": "^12.0.1",
+    "electron": "2.0.0"
   }
 }

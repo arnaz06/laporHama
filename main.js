@@ -87,7 +87,7 @@ app.on('activate', () => {
 ipc.on('send-bug', function(event, payload) {
   let data={
     title: payload.title,
-    body: payload.body+'![laporHama'+payload.image+']('+payload.image+')'
+    body: payload.body+'![laporHama-'+payload.image+']('+payload.image+')'
   }
     ghissues.create(authOptions, process.env.USERNAME, process.env.REPO, data, function(err, issue) {
       if (err) {
