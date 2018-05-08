@@ -97,6 +97,7 @@
         <div class="row">
           <div class="input-field col s12">
             <button 
+              onclick="alert('terimakasih gan, sudah melapor.')"
               style="display: none;"
               type="submit" 
               id="submitBtn"
@@ -121,7 +122,7 @@
       ) {
         document.getElementById('submitBtn').removeAttribute('style')
       } else {
-        document.getElementById('submitBtn')[1].style.display = "none"
+        document.getElementById('submitBtn').style.display = "none"
       }
     }
   </script>
