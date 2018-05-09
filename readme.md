@@ -16,3 +16,17 @@ Open Source Project
 
 ### Run project
 ```$ npm start```
+
+### Build Linux
+- linux amd64 architecture
+```$ npm run build-linux64```
+
+- linux i386 architecture
+```$ npm run build-linux32```
+
+### Build Deb
+- linux amd64 architecture
+```$ npm run deb64```
+
+- linux i386 architecture
+```$ npm run deb32```

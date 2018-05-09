@@ -41,25 +41,7 @@ function createWindow() {
     // when you should delete the corresponding element.
     win = null
   })
-  // const menu = Menu.buildFromTemplate([{
-  //   label: 'Menu',
-  //   submenu: [{
-  //       label: 'Adjust Notification Value'
-  //     },
-  //     {
-  //       label: 'CoinMarketCap',
-  //       click() {
-  //         shell.openExternal('http://github.com')
-  //       }
-  //     },
-  //     {
-  //       label: 'Exit',
-  //       click() {
-  //         app.quit()
-  //       }
-  //     },
-  //   ]
-  // }])
+
   Menu.setApplicationMenu(null)
 }
 
@@ -86,14 +68,17 @@ app.on('activate', () => {
 })
 ipc.on('send-bug', function(event, payload) {
   let data={
-    title: payload.title,
-    body: payload.body+'![laporHama-'+payload.image+']('+payload.image+')'
+    title: payload.title+'(Via Lapor Hama)',
+    body: payload.body+'![laporHama-'+payload.image+']('+payload.image+')',
+    labels:['bug']
   }
     ghissues.create(authOptions, process.env.USERNAME, process.env.REPO, data, function(err, issue) {
       if (err) {
         console.log(err);
+        win.webContents.send('send-result',err.message)
       } else {
         console.log(issue)
+        win.webContents.send('send-result',issue)
       }
     })
 

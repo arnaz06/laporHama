@@ -3,8 +3,8 @@ const path = require('path');
 const BrowserWindow = electron.remote.BrowserWindow
 const remote = electron.remote
 const fetch = require('fetch');
-// const nodeConsole = require('console');
-// const console = new nodeConsole.Console(process.stdout, process.stderr);
+const nodeConsole = require('console');
+const console = new nodeConsole.Console(process.stdout, process.stderr);
 require('dotenv').config()
 const ghissues     = require('ghissues')
     , authOptions = { user: process.env.USER, token: process.env.USER_TOKEN }
